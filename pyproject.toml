@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "erp-mcp"
+version = "0.1.0"
+description = "An MCP server that gives agents guarded access to an ERP REST API."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Baha Kırbaşoğlu" }]
+dependencies = ["mcp>=2.0", "httpx>=0.27", "pydantic>=2.6", "starlette>=0.40", "uvicorn>=0.30"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "anyio>=4", "ruff>=0.5"]
+
+[project.scripts]
+erp-mcp = "erp_mcp.server:main"
+erp-mock = "erp_mcp.mock_erp:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/erp_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
