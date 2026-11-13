@@ -1,5 +1,7 @@
 # erp-mcp
 
+[![CI](https://github.com/Bahakirbasogluu/erp-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/Bahakirbasogluu/erp-mcp-server/actions/workflows/ci.yml)
+
 A Model Context Protocol server that gives an agent guarded access to an ERP REST API: look up vendors and purchase orders, and post vendor invoices. It ships with a small mock ERP, so it runs and is tested without a real system.
 
 The interesting part of putting an agent in front of an accounting system is not the read tools. It is making sure a write happens once, after a person has seen it, and that a failure tells the model what to do next. This repository is a worked example of that. The code is written from scratch; it contains no client code or data.
